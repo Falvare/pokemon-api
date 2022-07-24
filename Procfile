@@ -1,1 +1,1 @@
-web: gunicorn Todo.wsgi --log-file -
+web: gunicorn pokemon_api.wsgi --log-file -
