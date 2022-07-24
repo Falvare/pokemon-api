@@ -8,3 +8,10 @@ def getData(requests):
     pokemon = Pokemon.objects.all()
     serializer = PokemonSerializer(pokemon, many=True)
     return Response(serializer.data)
+
+@api_view(['POST'])
+def addPokemon(requests):
+    serializer = PokemonSerializer(data=requests.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
