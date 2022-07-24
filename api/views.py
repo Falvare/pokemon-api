@@ -7,4 +7,4 @@ from pokemon.models import Pokemon
 def getData(requests):
     pokemon = Pokemon.objects.all()
     serializer = PokemonSerializer(pokemon, many=True)
-    return Response(requests, serializer.data)
+    return Response(serializer.data)
